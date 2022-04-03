@@ -1,0 +1,26 @@
+{
+  "name": "jefs42/libretranslate",
+  "description": "PHP interface for the open source LibreTranslate project",
+  "keywords": ["libretranslate", "translate", "php"],
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+        "name": "Jeffrey Shilt",
+        "email": "dev@fortytwo-it.com",
+        "homepage": "https://fortytwo-it.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2|^8.0",
+    "ext-json": "*",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jefs42\\": "src"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  }
+}
