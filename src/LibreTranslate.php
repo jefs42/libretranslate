@@ -140,9 +140,21 @@ class LibreTranslate
             return false;
         }
     }
-    //========== Translate ========
+
+    /*========== Translate ========
+    @string,@array $text Single string of text to translate, or array of multiple texts to translate
+    @string $source Source language (optional, will use default/current source language)
+    @string $target Target language (optional, will use default/current target language)
+    Returns: string or array
+    */
     public function Translate($text, $source = null, $target = null) {
         // TODO: if source or target passed, validate against known available languages
+        $isMulti = false; // check if text passed is single or array
+        if (is_array($text)) {
+            $isMulti = true;
+            $text = urlencode(json_encode($text));
+        }
+
         $data = [
             'q' => $text,
             'format' => 'html',
@@ -156,6 +168,11 @@ class LibreTranslate
         $response = $this->_doRequest('/translate', $data);
 
         if (is_object($response) && isset($response->translatedText)) {
+            // return array of translations if input was array
+            if ($isMulti) {
+                return (json_decode(urldecode($response->translatedText),true));
+            }
+            // else return single translation
             return $response->translatedText;
         } else {
             if (isset($response->error)) {

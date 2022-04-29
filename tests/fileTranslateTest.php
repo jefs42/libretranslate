@@ -7,17 +7,16 @@ final class fileTranslateTest extends TestCase
 {
 
     public function testTranslateFile_Success():void{
-        $translate = new LibreTranslate('http://167.99.221.187', 5000);
-        $translate->setApiKey('740fd0fb-e664-439f-9509-705ea84aa99c');
+        $translate = new LibreTranslate('translate.fortytwo-it.com', 5000);
 
         $file = __DIR__ . "/test-file1.txt";
         $translatedFileText = $translate->translateFiles($file);
+        print $translatedFileText;
         $this->assertIsString($translatedFileText);
     }
 
     public function testTranslateFile_InvalidFile():void{
-        $translate = new LibreTranslate('http://167.99.221.187', 5000);
-        $translate->setApiKey('740fd0fb-e664-439f-9509-705ea84aa99c');
+        $translate = new LibreTranslate('translate.fortytwo-it.com', 5000);
 
         $this->expectException(\Exception::class);
         $file = __DIR__ . "/test-file42.txt";
