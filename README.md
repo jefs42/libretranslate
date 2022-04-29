@@ -76,7 +76,7 @@ $lang = $translator->detect("mi nombre es jefs42");
 ```
 
 ### Translate Text
-Translate a string of text. A server may or may not have a character limit set. For larger texts see Translate File.
+Translate a string of text, or an array of multiple texts. A server may or may not have a character limit set. For larger texts see Translate File.
 ```php
 // translate text using current default source/target languages
 $translatedText = $translator->translate("My name is jefs42");
@@ -84,6 +84,10 @@ $translatedText = $translator->translate("My name is jefs42");
 // specifally request languages to use in translation.
 // eg. from English to German
 $translatedText = $translator->translate("My name is jefs42", "en", "de");
+
+// translate multiple texts in one call
+// returns array of translated texts
+$translatedText = $translator->translate(["My name is jefs42", "Where is the bathroom?"]);
 ```
 
 ### Translate File
