@@ -144,7 +144,7 @@ See [LibreTranslate Arguments](https://github.com/LibreTranslate/LibreTranslate#
 ----
 
 ## LTManage
-If you are running a locally hosted LibreTranslate server, you may have access to `ltmanage`. This allows you to view cunrrent keys and their request limits, as well as create new keys and delete current keys.
+If you are running a locally hosted LibreTranslate server, you may have access to `ltmanage`. This allows you to view current keys and their request limits, as well as create new keys and delete current keys.
 
 See [LibreTranslate Manage Keys](https://github.com/LibreTranslate/LibreTranslate#manage-api-keys) for details.
 
