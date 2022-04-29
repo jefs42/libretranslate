@@ -207,6 +207,8 @@ class LibreTranslate
     /*
     @string $original Source text
     @string $translation Suggested translation
+    @string $source Source language (optional, will use default/current source language)
+    @string $target Target language (optional, will use default/current target language)
     */
     function Suggest($original, $suggestion, $source = null, $target = null) {
             $data = [
@@ -218,6 +220,7 @@ class LibreTranslate
             if (!is_null($this->apiKey)) {
                 $data['api_key'] = $this->apiKey;
             }
+            $data = http_build_query($data);
             $response = $this->_doRequest('/suggest', $data);
             if (is_object($response) && isset($response->success)) {
                 return $response->success;
