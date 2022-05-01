@@ -61,7 +61,7 @@ class LibreTranslate
             $this->setSource($source);
         }
         if (!is_null($target)) {
-            $this->setSource($target);
+            $this->setTarget($target);
         }
 
         // If hosting LibreTranslate locally, check if ltmanage is available for API Key management
