@@ -39,7 +39,7 @@ class LibreTranslate
     public function __construct($host = null, $port = null, $source = null, $target = null) {
         // set API base, remove trailing slash
         if (!is_null($host)) {
-            $this->apiBase = rtrim( $host, '/\\' );;
+            $this->apiBase = rtrim( $host, '/\\' );
         }
 
         // set API port
@@ -96,7 +96,7 @@ class LibreTranslate
     /* set both... */
     public function setLanguages($source, $target) {
         $this->setSource($source);
-        $this->setLanguage($target);
+        $this->setTarget($target);
     }
 
     /*
