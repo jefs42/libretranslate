@@ -308,7 +308,7 @@ class LibreTranslate
 
     //====== send request to libretranslate server
     // TODO: connection issue or libretranslate error message....
-    private function _doRequest($endpoint, $data = [], $type = 'POST') {
+    public function _doRequest($endpoint, $data = [], $type = 'POST') {
         $this->lastError = '';
         $finalEndpoint = $this->apiBase . ( !is_null($this->apiPort) ? ':' . $this->apiPort : '' ) . $endpoint;
         $ch = \curl_init($finalEndpoint);
